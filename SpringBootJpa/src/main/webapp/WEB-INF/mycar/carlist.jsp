@@ -36,7 +36,7 @@
       <table class="table table-bordered" style="width: 1000px;">
       	<tr align="center">
       		<th width="60">번호</th>
-      		<th width="100">자동차명</th>
+      		<th width="300">자동차명</th>
       		<th width="100">색상</th>
       		<th width="160">가격</th>
       		<th width="220">구입일</th>
@@ -46,7 +46,10 @@
       		<c:forEach var="dto" items="${list }" varStatus="i">
       			<tr valign="middle">
       				<td align="center">${i.count }</td>
-      				<td align="center">${dto.carname }</td>
+      				<td align="center">
+      					<a href="detail?num=${dto.num }"><img alt="" src="../save/${dto.carphoto }"></a><br>
+      					${dto.carname }
+      				</td>
       				<td align="center"><div style="background-color: ${dto.carcolor}" class="box"></div></td>
       				<td align="center"><fmt:formatNumber value="${dto.carprice }" type="currency"/></td>
       				<td align="center">${dto.carguip }</td>

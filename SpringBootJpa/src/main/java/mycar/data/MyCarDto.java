@@ -33,6 +33,10 @@ public class MyCarDto {
 	private String carcolor;
 	@Column
 	private String carguip;
+	
+	@Column
+	private String carphoto;
+	
 	@CreationTimestamp		//엔티티가 생성되는 시점의 시간 자동등록(now())
 	@Column(updatable=false)		//updatable=false -> 수정시 이 컬럼은 수정x (이 작업을 안하면 날짜가 null로 찍힘)
 	private Timestamp guipday;
