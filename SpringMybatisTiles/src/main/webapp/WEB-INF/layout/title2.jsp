@@ -18,6 +18,7 @@
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath() %>"/>
-	<a href="${root }/"><img src="${root }/image/logo.svg" style="width: 200px; height: 150px;"></a>
+	<a href="${root }"><img src="${root }/image/title.jpg" style="width: 1000px; height: 600px;"></a>
+	<b>SpringBoot+Mybatis+Tiles</b>
 </body>
 </html>

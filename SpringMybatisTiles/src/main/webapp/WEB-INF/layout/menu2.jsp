@@ -20,18 +20,17 @@
 		list-style: none;
 	}
 	ul.menu li{
-		width: 80px;
-		height: 30px;
+		width: 120px;
+		height: 60px;
 		float: left;
+		border: 1px solid gray;
 		line-height: 60px;
 		text-align: center;
 		margin-right: 10px;
-		font-size: 22px;
-		font-family: 'Dongle';
+		font-size: 24px;
+		font-family: 'Gaegu';
+		background-color: #ffc;
 		cursor: pointer;
-	}
-	.season{
-		margin-left: 15px;
 	}
 	ul.menu li a{
 		text-decoration: none;
@@ -42,23 +41,33 @@
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <body>
 	<ul class="menu">
-		
 		<li>
-			<a href="${root }/ipgo/ipgoform">ADD</a>
-		</li>
-		
-		<li>
-			<a href="${root }/ipgo/list">SHOP</a>
+			<a href="${root }/">Home</a>
 		</li>
 		
 		<li>
-			<a href="${root }/board/list">BOARD</a>
+			<a href="${root }/ipgo/ipgoform">상품등록</a>
 		</li>
 		
-		<li class="season">
-			<a href="${root }/road/map" style="color: red;">SEASON OFF</a>
+		<li>
+			<a href="${root }/ipgo/list">상품목록</a>
 		</li>
-
+		
+		<li>
+			<a href="${root }/board/list">게시판</a>
+		</li>
+		
+		<li>
+			<a href="${root }/member/list">회원목록</a>
+		</li>
+		
+		<li>
+			<a href="${root }/member/form">회원가입</a>
+		</li>
+		
+		<li>
+			<a href="${root }/load/map">오시는길</a>
+		</li>
 	</ul>
 </body>
 </html>

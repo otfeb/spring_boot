@@ -17,60 +17,38 @@
 <title>Insert title here</title>
 <style type="text/css">
 	div.layout div{
-		border: 0px solid black;
+		border: 1px solid black;
 	}
 	div.layout div.title{
 		position: absolute;
-		left: 650px;
-		height: 150px;
+		top: 10px;
+		left: 450px;
+		height: 100px;
 	}
 	div.layout div.menu{
 		position: absolute;
-		top: 20px;
+		top: 150px;
+		left: 250px;
 		height: 100px;
-		width: 600px;
-		margin-top: 30px;
-		margin-left: 80px;
-	}
-	div.layout div.loginmenu{
-		position: absolute;
-		top: 20px;
-		height: 100px;
-		width: 500px;
-		margin-top: 30px;
-		margin-left: 1000px;
-	}
-/* 	div.layout div.info{
-		position: absolute;
-		top: 250px;
-		left: 30px;
-		height: 100px;
-		font-size: 17px;
-		width: 200px;
-	} */
+		width: 800px;
+	}	
 	div.layout div.main{
 		position: absolute;
 		top: 250px;
-		left: 150px;
+		left: 300px;
 		height: 500px;
 		font-size: 17px;
-		width: 1100px;
+		width: 1000px;
 	}
 </style>
 </head>
 <body>
 	<div class="layout">
 		<div class="title">
-			<tiles:insertAttribute name="title"/>
+			<tiles:insertAttribute name="title2"/>
 		</div>
 		<div class="menu">
-			<tiles:insertAttribute name="menu"/>
-		</div>
-		<div class="loginmenu">
-			<tiles:insertAttribute name="loginmenu"/>
-		</div>
-		<div class="info">
-			<tiles:insertAttribute name="info"/>
+			<tiles:insertAttribute name="menu2"/>
 		</div>
 		<div class="main">
 			<tiles:insertAttribute name="main"/>

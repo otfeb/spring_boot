@@ -18,7 +18,6 @@
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath() %>"/>
-	<img alt="" src="${root }/image/02.png">
-	각종정보 나타나게 해오기
+	<img alt="" src="${root }/">
 </body>
 </html>

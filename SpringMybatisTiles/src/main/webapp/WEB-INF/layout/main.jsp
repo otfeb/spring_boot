@@ -15,12 +15,20 @@
    rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+	.mainphoto{
+		width: 1300px;
+		height: 800px;
+	}
+</style>
 </head>
 <c:set var="root" value="<%=request.getContextPath() %>"/>
 <body>
-	<img src="${root }/image/02.png"><br>
-	<img src="${root }/image/03.png"><br>
-	<img src="${root }/image/04.png"><br>
-	<h2>Main Page 입니다</h2>
+	<div class="mainphoto">
+		<a href="${root }/ipgo/list"><img src="${root }/image/main1.jpg" style="width: 300px; height: 450px;"></a>
+		<a href="${root }/ipgo/list"><img src="${root }/image/main2.jpg" style="width: 300px; height: 450px;"></a>
+		<a href="${root }/ipgo/list"><img src="${root }/image/main3.jpg" style="width: 300px; height: 450px;"></a>
+		<a href="${root }/ipgo/list"><img src="${root }/image/main4.jpg" style="width: 300px; height: 450px;"></a>
+	</div>
 </body>
 </html>

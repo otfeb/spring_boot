@@ -42,8 +42,8 @@
 			
 			<tr>
 				<td colspan="2" align="center">
-					<button type="submit" class="btn btn-success">저장</button>
-					<button type="button" class="btn btn-success" onclick="location.href='list'">목록</button>
+					<button type="submit" class="btn btn-outline-success">저장</button>
+					<button type="button" class="btn btn-outline-success" onclick="location.href='list'">목록</button>
 				</td>
 			</tr>
 		</table>
