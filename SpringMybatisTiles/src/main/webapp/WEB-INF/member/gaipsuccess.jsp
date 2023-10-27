@@ -15,47 +15,8 @@
    rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
-<style type="text/css">
-	ul.menu{
-		list-style: none;
-	}
-	ul.menu li{
-		width: 80px;
-		height: 30px;
-		float: left;
-		line-height: 60px;
-		text-align: center;
-		margin-right: 10px;
-		font-size: 22px;
-		font-family: 'Dongle';
-		cursor: pointer;
-	}
-	ul.menu li a{
-		text-decoration: none;
-		color: black;
-	}
-</style>
 </head>
-<c:set var="root" value="<%=request.getContextPath() %>"/>
 <body>
-	<ul class="menu">
-	
-		<li>
-			<a href="${root }/member/myinfo">MYINFO</a>
-		</li>
-		
-		<li>
-			<a href="${root }/member/list">MEMBER</a>
-		</li>
-		
-		<li>
-			<a href="${root }/login/gaip">SIGN UP</a>
-		</li>
-		
-		<li>
-			<a href="${root }/login/main">SIGN IN</a>
-		</li>
-
-	</ul>
+	<h2 class="alert alert-info" align="center">${dto.id }님 가입을 축하드립니다!!</h2>
 </body>
 </html>

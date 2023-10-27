@@ -56,7 +56,7 @@
 		</li>
 		
 		<li class="season">
-			<a href="${root }/road/map" style="color: red;">SEASON OFF</a>
+			<a href="${root }/road/map" style="color: red;">ADDRESS</a>
 		</li>
 
 	</ul>

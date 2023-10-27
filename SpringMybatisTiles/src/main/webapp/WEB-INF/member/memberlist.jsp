@@ -17,6 +17,32 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h4 class="alert alert-info" style="width: 1200px;">&nbsp;${totalCount }명의 회원이 존재합니다</h4>
+	<button type="button" class="btn btn-outline-info" onclick="location.href='add'">Registarion</button>
+	<br><br>
+	<table class="table table-striped" style="width: 1200px;">
+		<tr align="center">
+			<th width="80">번호</th>
+			<th width="150">이름</th>
+			<th width="150">아이디</th>
+			<th width="250">프로필사진</th>
+			<th width="250">이메일</th>
+			<th width="250">가입일</th>
+		</tr>
+		<c:forEach var="dto" items="${list }" varStatus="i">
+			<tr align="center" valign="middle" class="content">
+				<td>${i.count }</td>
+				<td>${dto.name }</td>
+				<td>${dto.id }</td>
+				<td>
+					<a href="myinfo?id=${dto.id }"><img alt="" src="../upload/${dto.photo }" style="width: 100px; height: 100px;"></a>
+				</td>
+				<td>${dto.email }</td>
+				<td>
+					<fmt:formatDate value="${dto.gaipday }" pattern="yyyy-MM-dd HH:mm"/> 
+				</td>
+			</tr>
+		</c:forEach>
+	</table>
 </body>
 </html>
