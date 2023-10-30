@@ -18,7 +18,19 @@
 </head>
 <body>
 	<c:set var="root" value="<%=request.getContextPath() %>"/>
-	<a href="${root }"><img src="${root }/image/title.jpg" style="width: 1000px; height: 600px;"></a>
-	<b>SpringBoot+Mybatis+Tiles</b>
+	
+	<c:if test="${sessionScope.loginok==null }">
+		<button type="button" class="btn btn-outline-success" onclick="location.href='${root}/login/main'">Login</button>
+		<br><a href="${root }/"><img src="${root }/image/logo.svg" style="width: 200px; height: 100px;"></a>
+	</c:if>
+	
+	<c:if test="${sessionScope.loginok!=null }">
+		<b>${sessionScope.myid }님이 로그인중..</b>
+		<button type="button" class="btn btn-outline-success" onclick="location.href='${root}/login/logoutprocess'">Logout</button>
+		<br><a href="${root }/"><img src="${root }/membersave/${sessionScope.loginphoto}" style="width: 200px; height: 100px;"></a>
+	</c:if>
+	
+	
+
 </body>
 </html>

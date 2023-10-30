@@ -36,7 +36,7 @@
  	</definition>
  	
  	<!-- wild card 레이아웃2 -->
- 	<definition name="/sub/*/*" extends="layout1">
+ 	<definition name="/sub/*/*" extends="layout2">
  		<put-attribute name="main" value="/WEB-INF/{1}/{2}.jsp"/>
  	</definition>
  	

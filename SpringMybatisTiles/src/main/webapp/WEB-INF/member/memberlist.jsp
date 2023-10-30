@@ -15,6 +15,39 @@
    rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(function(){
+		$("#allcheck").click(function(){
+			var chk=$(this).is(":checked");
+			//console.log(chk);
+			
+			$(".del").prop("checked",chk);
+		});
+		
+		$("#btnmemberdel").click(function(){
+			var cnt=$(".del:checked").length;
+			//alert(cnt);
+			if(cnt==0){
+				alert("체크를 해주세요");
+				return;
+			}
+			
+			$(".del:checked").each(function(i,ele){
+				var num=$(this).attr("num");
+				//alert(num);
+				$.ajax({
+					type: "get",
+					url: "delete",
+					dataType: "html",
+					data: {"num":num},
+					success:function(){
+						location.reload();
+					}
+				});
+			});
+		});
+	});
+</script>
 </head>
 <body>
 	<h4 class="alert alert-info" style="width: 1200px;">&nbsp;${totalCount }명의 회원이 존재합니다</h4>
@@ -28,6 +61,9 @@
 			<th width="250">프로필사진</th>
 			<th width="250">이메일</th>
 			<th width="250">가입일</th>
+			<th width="120">
+				<input type="checkbox" id="allcheck">삭제
+			</th>
 		</tr>
 		<c:forEach var="dto" items="${list }" varStatus="i">
 			<tr align="center" valign="middle" class="content">
@@ -35,14 +71,21 @@
 				<td>${dto.name }</td>
 				<td>${dto.id }</td>
 				<td>
-					<a href="myinfo?id=${dto.id }"><img alt="" src="../upload/${dto.photo }" style="width: 100px; height: 100px;"></a>
+					<a href="myinfo?id=${dto.id }"><img alt="" src="../upload/${dto.photo }" 
+					style="width: 100px; height: 100px;"></a>
 				</td>
 				<td>${dto.email }</td>
 				<td>
 					<fmt:formatDate value="${dto.gaipday }" pattern="yyyy-MM-dd HH:mm"/> 
 				</td>
+				<td>
+					<input type="checkbox" num="${dto.num }" class="del">
+				</td>
 			</tr>
 		</c:forEach>
 	</table>
+	
+	<button type="button" class="btn btn-outline-danger" id="btnmemberdel" 
+	onclick="location.href=''">delete</button>
 </body>
 </html>

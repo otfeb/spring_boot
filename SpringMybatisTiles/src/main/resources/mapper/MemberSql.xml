@@ -15,4 +15,19 @@
   	<select id="getData" resultType="member" parameterType="String">
   		select * from bootmember where id=#{id}
   	</select>
+  	<select id="getName" parameterType="String" resultType="String">
+  		select name from bootmember where id=#{id}
+  	</select>
+  	<select id="loginPassCheck" parameterType="Map" resultType="int">
+  		select count(*) from bootmember where id=#{id} and pass=#{pass}
+  	</select>
+  	<delete id="deleteMember" parameterType="String">
+  		delete from bootmember where num=#{num}
+  	</delete>
+  	<update id="updatePhoto" parameterType="Map">
+  		update bootmember set photo=#{photo} where num=#{num}
+  	</update>
+  	<update id="updateMember" parameterType="member">
+  		update bootmember set name=#{name},addr=#{addr},email=#{email} where num=#{num}
+  	</update>
   </mapper>

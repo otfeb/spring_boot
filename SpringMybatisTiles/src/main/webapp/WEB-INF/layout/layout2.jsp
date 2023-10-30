@@ -17,28 +17,27 @@
 <title>Insert title here</title>
 <style type="text/css">
 	div.layout div{
-		border: 1px solid black;
+		border: 0px solid black;
 	}
 	div.layout div.title{
 		position: absolute;
-		top: 10px;
-		left: 450px;
-		height: 100px;
+		left: 650px;
+		height: 150px;
 	}
 	div.layout div.menu{
 		position: absolute;
 		top: 150px;
-		left: 250px;
+		left: 260px;
 		height: 100px;
-		width: 800px;
+		width: 1100px;
 	}	
 	div.layout div.main{
 		position: absolute;
 		top: 250px;
-		left: 300px;
+		left: 150px;
 		height: 500px;
 		font-size: 17px;
-		width: 1000px;
+		width: 1100px;
 	}
 </style>
 </head>

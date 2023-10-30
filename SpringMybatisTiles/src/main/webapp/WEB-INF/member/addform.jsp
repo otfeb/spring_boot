@@ -153,8 +153,8 @@
 				<tr>
 					<td colspan="2" align="center">
 						<button type="submit" class="btn btn-outline-success" style="width: 120px;">회원가입</button>
-						<button type="submit" class="btn btn-outline-success" style="width: 120px;" 
-						onclick="location.href=''">로그인</button>
+						<button type="button" class="btn btn-outline-success" style="width: 120px;" 
+						onclick="location.href='../login/main'">로그인</button>
 					</td>
 				</tr>
 			</table>

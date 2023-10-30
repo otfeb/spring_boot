@@ -2,6 +2,8 @@ package boot.data.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -108,4 +110,52 @@ public class MemberController {
 			return "redirect:list";
 		}
 	}
+	
+	//삭제는 ajax
+	@GetMapping("/member/delete")
+	@ResponseBody
+	public void deleteMember(@RequestParam String num) {
+		
+		service.deleteMember(num);
+	}
+	
+	//사진만 수정
+	@PostMapping("/member/updatephoto")
+	@ResponseBody
+	public void photoupload(@RequestParam String num,MultipartFile photo,HttpSession session) {
+		//업로드할 경로
+		String path=session.getServletContext().getRealPath("/membersave");
+		
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyyMMddHHmmss");
+		String fileName=sdf.format(new Date())+photo.getOriginalFilename();
+		
+		//업로드
+		try {
+			photo.transferTo(new File(path+"/"+fileName));
+			
+			//db사진수정
+			service.updatePhoto(num, fileName);		
+			//세션사진수정
+			session.setAttribute("loginphoto", fileName);
+		} catch (IllegalStateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	//delete
+	@GetMapping("/member/deletemyinfo")
+	public String delete(@RequestParam String num,HttpSession session) {
+		
+		service.deleteMember(num);
+		
+		session.removeAttribute("loginok");
+		
+		return "redirect:list";
+	}
+	
 }

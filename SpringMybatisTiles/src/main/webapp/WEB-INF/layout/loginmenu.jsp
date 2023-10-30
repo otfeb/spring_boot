@@ -41,7 +41,12 @@
 	<ul class="menu">
 	
 		<li>
-			<a href="${root }/member/myinfo">MYINFO</a>
+			<c:if test="${sessionScope.loginok!=null }">
+				<a href="${root }/member/myinfo?id=${sessionScope.myid}">MYINFO</a>
+			</c:if>
+			<c:if test="${sessionScope.loginok==null }">
+				<a href="${root }/login/main">MYINFO</a>
+			</c:if>
 		</li>
 		
 		<li>
@@ -49,7 +54,7 @@
 		</li>
 		
 		<li>
-			<a href="${root }/login/gaip">SIGN UP</a>
+			<a href="${root }/member/add">SIGN UP</a>
 		</li>
 		
 		<li>
