@@ -58,6 +58,10 @@
 		</li>
 		
 		<li>
+			<a href="${root }/member/myinfo?id=${sessionScope.myid}">회원정보</a>
+		</li>
+		
+		<li>
 			<a href="${root }/member/list">회원목록</a>
 		</li>
 		

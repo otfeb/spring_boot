@@ -158,4 +158,12 @@ public class MemberController {
 		return "redirect:list";
 	}
 	
+	//update
+	@PostMapping("/member/update")
+	@ResponseBody
+	public void update(@ModelAttribute MemberDto dto) {
+		
+		service.updateMember(dto);
+	}
+	
 }
