@@ -54,7 +54,11 @@
 		</li>
 		
 		<li>
-			<a href="${root }/board/list">게시판</a>
+			<a href="${root }/reboard/list">게시판</a>
+		</li>
+		
+		<li>
+			<a href="${root }/memboard/list">답변형게시판</a>
 		</li>
 		
 		<li>

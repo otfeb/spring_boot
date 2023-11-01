@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ReboardController {
 
-	@GetMapping("/board/list")
+	@GetMapping("/reboard/list")
 	public String boardlist() {
 		return "/reboard/boardlist";
 	}

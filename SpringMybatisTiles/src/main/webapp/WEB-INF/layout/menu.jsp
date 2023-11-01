@@ -52,7 +52,11 @@
 		</li>
 		
 		<li>
-			<a href="${root }/board/list">BOARD</a>
+			<a href="${root }/reboard/list">BOARD</a>
+		</li>
+		
+		<li>
+			<a href="${root }/memboard/list">MEMBOARD</a>
 		</li>
 		
 		<li class="season">

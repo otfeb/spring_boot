@@ -1,0 +1,46 @@
+schema name : semi_project
+
+
+CREATE TABLE `semi_project`.`personal` (
+  `num` INT NOT NULL AUTO_INCREMENT,
+  `p_id` VARCHAR(50) NULL,
+  `p_pass` VARCHAR(50) NULL,
+  `p_name` VARCHAR(50) NULL,
+  `p_hp` VARCHAR(50) NULL,
+  `p_birth` VARCHAR(50) NULL,
+  `p_email` VARCHAR(50) NULL,
+  `p_date` VARCHAR(50) NULL,
+  PRIMARY KEY (`num`),
+  UNIQUE INDEX `p_id_UNIQUE` (`p_id` ASC) VISIBLE,
+  UNIQUE INDEX `p_email_UNIQUE` (`p_email` ASC) VISIBLE);
+
+
+
+
+
+
+CREATE TABLE `semi_project`.`business` (
+  `b_id` VARCHAR(50) NOT NULL,
+  `b_pass` VARCHAR(45) NULL,
+  `b_name` VARCHAR(45) NULL,
+  `s_name` VARCHAR(45) NULL,
+  `s_addr` VARCHAR(45) NULL,
+  `b_hp` VARCHAR(45) NULL,
+  `b_email` VARCHAR(45) NULL,
+  `b_date` VARCHAR(45) NULL,
+  UNIQUE INDEX `s_addr_UNIQUE` (`s_addr` ASC) VISIBLE,
+  UNIQUE INDEX `b_hp_UNIQUE` (`b_hp` ASC) VISIBLE,
+  PRIMARY KEY (`b_id`));
+
+
+
+
+
+
+CREATE TABLE `semi_project`.`admin` (
+  `a_id` VARCHAR(45) NULL,
+  `a_pass` VARCHAR(45) NULL,
+  `a_email` VARCHAR(45) NULL,
+  `a_hp` VARCHAR(45) NULL,
+  UNIQUE INDEX `a_id_UNIQUE` (`a_id` ASC) VISIBLE,
+  UNIQUE INDEX `a_hp_UNIQUE` (`a_hp` ASC) VISIBLE);
