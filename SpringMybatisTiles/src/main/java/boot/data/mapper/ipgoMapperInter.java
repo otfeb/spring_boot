@@ -13,4 +13,7 @@ public interface ipgoMapperInter {
 	public void insertIpgo(IpgoDto dto);
 	public List<IpgoDto> getAllIpgos();
 	public IpgoDto getData(String num);
+	
+	//검색기능
+	public List<String> sangSearch(String search);
 }

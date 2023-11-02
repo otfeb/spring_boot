@@ -15,6 +15,11 @@
    rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
+<style type="text/css">
+	a{
+		text-decoration: none;
+	}
+</style>
 </head>
 <body>
 <div style="margin: 50px 100px; width: 1000px;">
@@ -45,7 +50,7 @@
 			<tr align="center">
 				<td>${no }</td>
 				<c:set var="no" value="${no-1 }"></c:set>
-				<td>${dto.subject }</td>
+				<td><a href="content?num=${dto.num }&currentPage=${currentPage}">${dto.subject }</a></td>
 				<td>${dto.myid }</td>
 				<td>${dto.readcount }</td>
 				<td><fmt:formatDate value="${dto.writeday }" pattern="yyyy-MM-dd HH:mm"/></td>

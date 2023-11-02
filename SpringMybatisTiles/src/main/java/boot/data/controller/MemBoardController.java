@@ -66,6 +66,11 @@ public class MemBoardController {
 			 * }
 			 */
 	      
+	      if (endPage > totalPage)
+	          endPage = totalPage;
+	      
+	      
+	      //sex
 	      //각페이지에서 보여질 시작번호   
 	      int no=totalCount-(currentPage-1)*perPage;
 		
@@ -126,7 +131,8 @@ public class MemBoardController {
 	}
 	
 	@GetMapping("/content")
-	public ModelAndView content(@RequestParam String num) {
+	public ModelAndView content(@RequestParam String num,
+			@RequestParam(defaultValue = "1") int currentPage) {
 		ModelAndView mav=new ModelAndView();
 		
 		//조회수 증가
@@ -149,8 +155,19 @@ public class MemBoardController {
 			mav.addObject("bupload", false);
 		}
 		
+		mav.addObject("currentPage", currentPage);
 		mav.setViewName("/memboard/content");
 		
 		return mav;
+	}
+	
+	@GetMapping("/updateform")
+	public String update() {
+		return "/memboard/updateform";
+	}
+	
+	@GetMapping("/delete")
+	public String delete() {
+		return "/memboard/delete";
 	}
 }
