@@ -24,7 +24,7 @@
 <script type="text/javascript">
 	$(function(){
 
-		$("#search").keydown(function(){
+		$("#search").keyup(function(){
 			
 			var search=$(this).val();
 			//alert(search);
@@ -35,11 +35,32 @@
 				url:"/search/result",
 				data:{"search":search},
 				success:function(res){
-					alert("입력성공");
+					var s="";
+					
+					$.each(res,function(i,dto){
+						s+="<b onclick='selectSearch()' class='searchResult'>"+dto+"</b><br>"
+					});
+					
+					if(search==""){
+						$("#result").html("");
+					}
+					else{
+						$("#result").html(s);
+					}
 				}
 			});
 		});
 	});
+	
+	function selectSearch() {
+		$(document).on("click","b.searchResult",function(event){
+			var s=$(this).html();
+			//alert(s);
+			
+			$("#search").val(s);
+			$("#result").html("");
+		});
+	}
 </script>
 </head>
 <body>

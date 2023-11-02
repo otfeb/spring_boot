@@ -19,7 +19,7 @@
   		select * from ipgo where num=#{num}
   	</select>
   	
-  	<select id="sangSearch" parameterType="String" resultType="IpgoDto">
+  	<select id="sangSearch" parameterType="String" resultType="String">
   		select sangpum from ipgo where sangpum like concat('%',#{search},'%')
   	</select>
   </mapper>
