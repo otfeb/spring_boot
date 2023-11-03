@@ -18,7 +18,7 @@
 </head>
 <body>
 	<div style="margin: 20px 340px;">
-	<form action="insert" method="post" enctype="multipart/form-data">
+	<form action="update" method="post" enctype="multipart/form-data">
 		<table class="table table-bordered" style="width: 500px;">
 			<caption align="top"><b>회원전용 글쓰기</b></caption>
 			<tr>

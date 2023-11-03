@@ -61,12 +61,12 @@
 			$("#result").html("");
 		});
 	}
-</script>
+</script> 
 </head>
 <body>
 	<div align="center" id="maindiv">
 		<img src="../upload/google.png">
-		<input type="text" class="form-control" style="width: 600px;" id="search">
+		<input type="text" class="form-control" style="width: 600px; background-color: lightgray;" id="search">
 		<br>
 		<div id="result"></div>
 	</div>

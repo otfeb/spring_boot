@@ -55,6 +55,14 @@
 		    <artifactId>tiles-el</artifactId>
 		    <version>3.0.8</version>
 		</dependency>
+		
+		<!-- cos -->
+		<dependency>
+		    <groupId>servlets.com</groupId>
+		    <artifactId>cos</artifactId>
+		    <version>05Nov2002</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

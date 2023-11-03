@@ -41,4 +41,23 @@ public class MbanswerController {
 	public List<MbanswerDto> list(String num){
 		return mapper.getAllAnswers(num);
 	}
+	
+	
+	 @GetMapping("/adelete") 
+	 public void delete(String idx) {
+		 mapper.deleteAnswer(idx); 
+	}
+	 
+	 //수정창 content띄우기
+	 @GetMapping("/adata")
+	 public MbanswerDto getData(String idx) {
+		 return mapper.getAnswer(idx);
+	 }
+	 
+	 //수정
+	 @PostMapping("/aupdate")
+	 public void aupdate(@ModelAttribute MbanswerDto dto) {
+		 mapper.updateMbanswer(dto);
+	 }
+	 
 }

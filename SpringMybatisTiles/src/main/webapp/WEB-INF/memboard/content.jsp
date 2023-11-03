@@ -14,6 +14,7 @@
    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
    rel="stylesheet">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
@@ -28,7 +29,7 @@
 			
 			
 			if(content.length==0){
-				alert("댓글을 입력해 주세요")
+				alert("댓글을 입력해 주세요");
 				return;
 			}
 			
@@ -46,11 +47,57 @@
 		});
 		
 		//댓글 수정창 띄우기
+		$(document).on("click","i.amod",function(){
+			var idx=$("#idx").val();
+			//alert(idx);
+			
+			$.ajax({
+				type: "get",
+				dataType: "json",
+				url: "/mbanswer/adata",
+				data: {"idx":idx},
+				success:function(res){
+					$("#ucontent").val(res.content);
+				}
+			});
+			$("#mbUpdateModal").modal("show");
+		});
 		
 		//댓글 수정
+		$(document).on("click","#btnupdate",function(){
+			var content=$("#ucontent").val();
+			var idx=$("#idx").val();
+			
+			//alert(idx+","+content);
+			
+			$.ajax({
+				type:"post",
+				dataType:"html",
+				url:"/mbanswer/aupdate",
+				data:{"idx":idx,"content":content},
+				success:function(){
+					$("#mbUpdateModal").modal("hide");
+					list();
+				}
+			});
+		});
+		
 		
 		//댓글 삭제
-		
+		$(document).on("click","i.adel",function(){
+			var idx=$("#idx").val();
+			//alert(idx);
+			
+			$.ajax({
+				type:"get",
+				dataType:"html",
+				url:"/mbanswer/adelete",
+				data:{"idx":idx},
+				success:function(){
+					list();
+				}
+			});
+		});
 	});
 	
 	function list() {
@@ -72,8 +119,9 @@
 				$.each(res,function(i,dto){
 					s+="<b>"+dto.name+"</b>: "+dto.content;
 					if(loginok!=null && myid==dto.myid){
-						s+="<a href='answerupdate'><i class='bi bi-pencil-square'></i><a/>"
-						s+="<a href='answerdelete'><i class='bi bi-trash3'></i></a><br>"
+						s+="<input type='hidden' id='idx' value='"+dto.idx+"'>"
+						s+="<i class='bi bi-pencil-square amod'></i>"
+						s+="<i class='bi bi-trash3 adel'></i><br>"
 					}
 					s+="<span class='day' style='float:right;'><small style='color:gray;'>"
 					+dto.writeday+"</small></span><br>";
@@ -159,5 +207,33 @@
 			</tr>
 		</table>
 	</div>
+	
+	<!-- The Modal -->
+<div class="modal" id="mbUpdateModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">댓글수정</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <input type="text" id="ucontent" class="form-control">
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+      <button type="button" class="btn btn-success" id="btnupdate">수정</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+	
+	
 </body>
 </html>

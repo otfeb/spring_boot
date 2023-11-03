@@ -60,7 +60,7 @@
 		</li>
 		
 		<li class="season">
-			<a href="${root }/road/map" style="color: red;">ADDRESS</a>
+			<a href="${root }/smart/list" style="color: red;">SMARTSHOP</a>
 		</li>
 
 	</ul>
