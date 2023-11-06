@@ -70,7 +70,6 @@ public class MemBoardController {
 	          endPage = totalPage;
 	      
 	      
-	      //sex
 	      //각페이지에서 보여질 시작번호   
 	      int no=totalCount-(currentPage-1)*perPage;
 		
