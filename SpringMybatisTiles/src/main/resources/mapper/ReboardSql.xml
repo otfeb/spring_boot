@@ -42,6 +42,6 @@
   		delete from reminiboard where num=#{num}
   	</delete>
   	<update id="updateLikes" parameterType="int">
-  		update reminiboard set likes=likes where num=#{num}
+  		update reminiboard set likes=likes+1 where num=#{num}
   	</update>
   </mapper>
